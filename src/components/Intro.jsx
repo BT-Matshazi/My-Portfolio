@@ -7,19 +7,14 @@ function Intro() {
         Bekithemba Matshazi
       </h1>
       <p className="text-base md:text-xl mb-3 font-medium">
-        Software Engineer & Web Developer
+        Full Stack Web Developer
       </p>
       <p className="text-sm max-w-xl mb-6 font-bold">
         <br />{" "}
-        <a
-          href="#0"
-          target="_blank"
-          className="text-cyan-600 hover:underline underline-offset-2 decoration-2 decoration-red-600"
-          rel="noreferrer noopener"
-        >
+        <span className="text-black hover:underline underline-offset-2 decoration-2 decoration-red-600">
           Bekithemba Matshazi
-        </a>{" "}
-        Software Development Varsity COllage
+        </span>{" "}
+        Software Development Varsity Collage
       </p>
     </div>
   );
