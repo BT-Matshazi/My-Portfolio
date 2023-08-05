@@ -5,7 +5,7 @@ import PortfolioItem from './PortfolioItem';;
 function Portfolio() {
    return (
      <>
-       <h1 className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white text-center">
+       <h1 id='projects' className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white text-center">
          Projects
        </h1>
        <div className="flex flex-col md:flex-row items-center justify-center">
