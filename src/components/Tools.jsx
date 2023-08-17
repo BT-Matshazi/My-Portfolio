@@ -51,7 +51,7 @@ const frontend = [
   {
     id: 2,
     name: "Next.js",
-    image: "/assets/imgnext.ls-logo.png",
+    image: "/assets/next.ls-logo.png",
   },
   {
     id: 3,
