@@ -2,7 +2,7 @@ export default [
   {
     title: "Property Listing Website",
     imgUrl: "/assets/roomsekasi project.jpg",
-    stack: ["Next.js", "AWS", "SCSS"],
+    stack: ["Next.js", "AWS S3", "SCSS", "Redux", "MapBox", "Bootstrap"],
     link: "https://roomsekasi.co.za/",
   },
   {

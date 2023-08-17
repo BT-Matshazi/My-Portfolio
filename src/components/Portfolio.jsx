@@ -5,11 +5,11 @@ import PortfolioItem from './PortfolioItem';;
 function Portfolio() {
    return (
      <>
-       <h1 id='projects' className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white text-center">
+       <h1 className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white text-center">
          Projects
        </h1>
        <div className="flex flex-col md:flex-row items-center justify-center">
-         <div className="grid grid-cols-1 md:grid-cols-2 mx-4 lg:grid-cols-3 gap-4">
+         <div className="grid grid-cols-1 md:grid-cols-2 mx-4 lg:grid-cols-2 gap-4">
            {portfolio.map((project) => (
              <PortfolioItem
                imgUrl={project.imgUrl}

@@ -2,7 +2,7 @@ export default [
   {
     year: "2023",
     title: "Contracted to Build A Property Listing Web App",
-    duration: "4 months",
+    duration: "6 months",
     details: "In February of 2023 I was offered a contract to build a web application for a property listing business targeted at the lower income demographic",
   },
   {
