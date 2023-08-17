@@ -5,17 +5,17 @@ const webServices = [
   {
     id: 1,
     name: "Planetscale",
-    image: "/public/assets/planetscale.jpg",
+    image: "/assets/planetscale.jpg",
   },
   {
     id: 2,
     name: "Vercel",
-    image: "/public/assets/vercel.png",
+    image: "/assets/vercel.png",
   },
   {
     id: 3,
     name: "AWS",
-    image: "/public/assets/aws-logo.png",
+    image: "/assets/aws-logo.png",
   }
 ]
 
@@ -23,22 +23,22 @@ const styling = [
   {
     id: 1,
     name: "Tailwind CSS",
-    image: "/public/assets/tailwindcss-logo.png",
+    image: "/assets/tailwindcss-logo.png",
   },
   {
     id: 2,
     name: "Sass",
-    image: "/public/assets/sass-logo.png",
+    image: "/assets/sass-logo.png",
   },
   {
     id: 3,
     name: "CSS",
-    image: "/public/assets/css-logo.png",
+    image: "/assets/css-logo.png",
   },
   {
     id: 4,
     name: "Bootstrap",
-    image: "/public/assets/bootstrap-logo.png",
+    image: "/assets/bootstrap-logo.png",
   }
 ]
 
@@ -46,17 +46,17 @@ const frontend = [
   {
     id: 1,
     name: "React",
-    image: "/public/assets/react-logo.png",
+    image: "/assets/react-logo.png",
   },
   {
     id: 2,
     name: "Next.js",
-    image: "/public/assets/public/assets/imgnext.ls-logo.png",
+    image: "/assets/imgnext.ls-logo.png",
   },
   {
     id: 3,
     name: "Asp.Net",
-    image: "/public/assets/asp.net-logo.png",
+    image: "/assets/asp.net-logo.png",
   }
 ]
 
@@ -64,17 +64,17 @@ const backend = [
   {
     id: 1,
     name: "Javascript",
-    image: "/public/assets/js-logo.png",
+    image: "/assets/js-logo.png",
   },
   {
     id: 2,
     name: "Node.js",
-    image: "/public/assets/node.js-logo.png",
+    image: "/assets/node.js-logo.png",
   },
   {
     id: 3,
     name: "C#",
-    image: "/public/assets/C-sharp-logo.png",
+    image: "/assets/C-sharp-logo.png",
   },
 ];
 
