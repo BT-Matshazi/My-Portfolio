@@ -6,7 +6,7 @@ function Portfolio() {
    return (
      <>
        <h1 className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white text-center">
-         Projects
+         Noteworthy Projects
        </h1>
        <div className="flex flex-col md:flex-row items-center justify-center">
          <div className="grid grid-cols-1 md:grid-cols-2 mx-4 lg:grid-cols-2 gap-4">
@@ -16,6 +16,7 @@ function Portfolio() {
                title={project.title}
                stack={project.stack}
                link={project.link}
+               Description={project.description}
              />
            ))}
          </div>
