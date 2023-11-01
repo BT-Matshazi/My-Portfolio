@@ -1,11 +1,7 @@
-import Roomsekasi1 from "/assets/roomsekasi project.jpg";
-
-
-
 export default [
   {
     title: "Property Listing Website",
-    imgUrl: [Roomsekasi1],
+    imgUrl: ["/assets/roomsekasi1.jpg"],
     stack: ["Next.js", "AWS S3", "SCSS", "Redux", "MapBox", "Bootstrap"],
     link: "https://roomsekasi.co.za/",
     description:
@@ -13,7 +9,7 @@ export default [
   },
   {
     title: "School Project Management System",
-    imgUrl: ["/assets/Wil Management.png", Roomsekasi1],
+    imgUrl: ["/assets/Wil Management.png"],
     stack: ["Next.js", "Tailwindcss", "NextAuth", "MongoDB", "AWS S3"],
     link: "https://wil-management.vercel.app/student/dashboard",
     description:
@@ -21,7 +17,14 @@ export default [
   },
   {
     title: "Personal Web Development Agency V1",
-    imgUrl: ["/assets/Blackbox.jpg"],
+    imgUrl: [
+      "/assets/Blackbox.jpg",
+      "/assets/v11.png",
+      "/assets/v12.png",
+      "/assets/v13.png",
+      "/assets/v14.png",
+      "/assets/v15.png",
+    ],
     stack: ["HTML", "CSS", "JavaScript"],
     link: "https://blackboxdesigns.co.za/",
     description:
