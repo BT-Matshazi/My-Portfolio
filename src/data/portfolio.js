@@ -3,13 +3,13 @@ import Roomsekasi1 from "/public/assets/roomsekasi project.jpg";
 
 
 //blackbox v2 images
-import BlackBoxV21 from "/public/images/portolio/BlackBox/v211.png";
-import BlackBoxV22 from "/public/images/portolio/BlackBox/v2-2.png";
-import BlackBoxV23 from "/public/images/portolio/BlackBox/v2-3.png";
-import BlackBoxV24 from "/public/images/portolio/BlackBox/v2-4.png";
-import BlackBoxV25 from "/public/images/portolio/BlackBox/v2-5.png";
-import BlackBoxV26 from "/public/images/portolio/BlackBox/v2-6.png";
-import BlackBoxV27 from "/public/images/portolio/BlackBox/v2-7.png";
+import BlackBoxV21 from "/public/images/portolio/BlackBox/v21.png";
+import BlackBoxV22 from "/public/images/portolio/BlackBox/v22.png";
+import BlackBoxV23 from "/public/images/portolio/BlackBox/v23.png";
+import BlackBoxV24 from "/public/images/portolio/BlackBox/v24.png";
+import BlackBoxV25 from "/public/images/portolio/BlackBox/v25.png";
+import BlackBoxV26 from "/public/images/portolio/BlackBox/v26.png";
+import BlackBoxV27 from "/public/images/portolio/BlackBox/v27.png";
 
 export default [
   {
