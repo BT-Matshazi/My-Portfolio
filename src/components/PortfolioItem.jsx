@@ -25,7 +25,7 @@ function PortfolioItem({ title, imgUrl, stack, link, Description }) {
           className="relative w-full"
           data-carousel="static"
         >
-          <div className="relative h-80 overflow-hidden  md:h-96">
+          <div className="relative h-52 overflow-hidden  md:h-96">
             {imgUrl.map((image, index) => (
               <div
                 key={index}
@@ -36,7 +36,7 @@ function PortfolioItem({ title, imgUrl, stack, link, Description }) {
               >
                 <img
                   src={image}
-                  className="object-cover cursor-pointer h-full absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-all ease-in-out "
+                  className="object-scale-down md:object-cover cursor-pointer h-full absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-all ease-in-out "
                   alt={`Slide ${index + 1}`}
                 />
               </div>
