@@ -1,11 +1,7 @@
-import Roomsekasi1 from "/assets/roomsekasi project.jpg";
-
-
-
 export default [
   {
     title: "Property Listing Website",
-    imgUrl: [Roomsekasi1],
+    imgUrl: ["/assets/roomsekasi project.jpg"],
     stack: ["Next.js", "AWS S3", "SCSS", "Redux", "MapBox", "Bootstrap"],
     link: "https://roomsekasi.co.za/",
     description:
@@ -31,12 +27,12 @@ export default [
     title: "Personal Web Development Agency V2",
     imgUrl: [
       "/assets/v21.png",
-      // "public/images/portolio/BlackBox/v22.png",
-      // "public/images/portolio/BlackBox/v23.png",
-      // "public/images/portolio/BlackBox/v24.png",
-      // "public/images/portolio/BlackBox/v25.png",
-      // "public/images/portolio/BlackBox/v26.png",
-      // "public/images/portolio/BlackBox/v27.png",
+      "/assets/v22.png",
+      "/assets/v23.png",
+      "/assets/v24.png",
+      "/assets/v25.png",
+      "/assets/v26.png",
+      "/assets/v27.png",
     ],
     stack: ["Next.js", "Tailwindcss", "Payfast"],
     link: "https://blackbox-designs.vercel.app/",
