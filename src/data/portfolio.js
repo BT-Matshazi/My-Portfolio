@@ -1,7 +1,11 @@
+import Roomsekasi1 from "/assets/roomsekasi project.jpg";
+
+
+
 export default [
   {
     title: "Property Listing Website",
-    imgUrl: ["/assets/roomsekasi project.jpg"],
+    imgUrl: [Roomsekasi1],
     stack: ["Next.js", "AWS S3", "SCSS", "Redux", "MapBox", "Bootstrap"],
     link: "https://roomsekasi.co.za/",
     description:
