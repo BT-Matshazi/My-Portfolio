@@ -1,7 +1,20 @@
+import Roomsekasi1 from "../../public/assets/roomsekasi project.jpg";
+
+
+
+//blackbox v2 images
+import BlackBoxV21 from "../../public/images/portolio/BlackBox/v2-1.png";
+import BlackBoxV22 from "../../public/images/portolio/BlackBox/v2-2.png";
+import BlackBoxV23 from "../../public/images/portolio/BlackBox/v2-3.png";
+import BlackBoxV24 from "../../public/images/portolio/BlackBox/v2-4.png";
+import BlackBoxV25 from "../../public/images/portolio/BlackBox/v2-5.png";
+import BlackBoxV26 from "../../public/images/portolio/BlackBox/v2-6.png";
+import BlackBoxV27 from "../../public/images/portolio/BlackBox/v2-7.png";
+
 export default [
   {
     title: "Property Listing Website",
-    imgUrl: "/assets/roomsekasi project.jpg",
+    imgUrl: [Roomsekasi1],
     stack: ["Next.js", "AWS S3", "SCSS", "Redux", "MapBox", "Bootstrap"],
     link: "https://roomsekasi.co.za/",
     description:
@@ -9,17 +22,33 @@ export default [
   },
   {
     title: "School Project Management System",
-    imgUrl: "/assets/Wil Management.png",
+    imgUrl: ["/assets/Wil Management.png", Roomsekasi1],
     stack: ["Next.js", "Tailwindcss", "NextAuth", "MongoDB", "AWS S3"],
     link: "https://wil-management.vercel.app/student/dashboard",
     description:
       "The Work Integrated Learning management system (WIL)-ms is a comprehensive digital platform designed to streamline and enhance the management of the Work Integration Learning module (WIL) at IIE Varsity College. This innovative system aims to empower students as they embark on a 13-week journey to build web and mobile applications for non-governmental organizations (NGOs) in collaborative groups of six.",
   },
   {
-    title: "Personal Web Development Agency",
-    imgUrl: "/assets/Blackbox.jpg",
+    title: "Personal Web Development Agency V1",
+    imgUrl: ["/assets/Blackbox.jpg"],
     stack: ["HTML", "CSS", "JavaScript"],
     link: "https://blackboxdesigns.co.za/",
+    description:
+      "BlackBox Designs is my personal web development agency that specializes in building websites for small businesses. I offer a wide range of services including web design, web development, and web hosting.",
+  },
+  {
+    title: "Personal Web Development Agency V2",
+    imgUrl: [
+      BlackBoxV21,
+      BlackBoxV22,
+      BlackBoxV23,
+      BlackBoxV24,
+      BlackBoxV25,
+      BlackBoxV26,
+      BlackBoxV27,
+    ],
+    stack: ["Next.js", "Tailwindcss", "Payfast"],
+    link: "https://blackbox-designs.vercel.app/",
     description:
       "BlackBox Designs is my personal web development agency that specializes in building websites for small businesses. I offer a wide range of services including web design, web development, and web hosting.",
   },
