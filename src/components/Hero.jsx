@@ -3,10 +3,10 @@ import React from "react";
 function Hero() {
   return (
     <>
-      <section className="bg-white dark:bg-gray-900 md:my-14 my-[130px]">
+      <section className="bg-white dark:bg-gray-900 mt-14 mb-20 md:mb-10  md:mt-4 ">
         <div className="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 items-center justify-center self-center align-middle">
-          <div className=" align-middle mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+          <div className="order-last md:order-first   align-middle mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Bekithemba Matshazi
             </h1>
             <p className="text-base md:text-xl mb-3 font-medium">
@@ -27,7 +27,7 @@ function Hero() {
               My Resume
             </a>
           </div>
-          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex m-2">
             <img
               src="/assets/Bekithemba.jpg"
               alt="mockup"
