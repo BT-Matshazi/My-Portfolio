@@ -2,15 +2,6 @@ import Roomsekasi1 from "/assets/roomsekasi project.jpg";
 
 
 
-//blackbox v2 images
-// import BlackBoxV21 from "/images/portolio/BlackBox/v21.png";
-// import BlackBoxV22 from "/images/portolio/BlackBox/v22.png";
-// import BlackBoxV23 from "/images/portolio/BlackBox/v23.png";
-// import BlackBoxV24 from "/images/portolio/BlackBox/v24.png";
-// import BlackBoxV25 from "/images/portolio/BlackBox/v25.png";
-// import BlackBoxV26 from "/images/portolio/BlackBox/v26.png";
-// import BlackBoxV27 from "/images/portolio/BlackBox/v27.png";
-
 export default [
   {
     title: "Property Listing Website",
@@ -39,13 +30,13 @@ export default [
   {
     title: "Personal Web Development Agency V2",
     imgUrl: [
-      "/images/portolio/BlackBox/v21.png",
-      "/images/portolio/BlackBox/v22.png",
-      "/images/portolio/BlackBox/v23.png",
-      "/images/portolio/BlackBox/v24.png",
-      "/images/portolio/BlackBox/v25.png",
-      "/images/portolio/BlackBox/v26.png",
-      "/images/portolio/BlackBox/v27.png",
+      "/public/images/portolio/BlackBox/v21.png",
+      "/public/images/portolio/BlackBox/v22.png",
+      "/public/images/portolio/BlackBox/v23.png",
+      "/public/images/portolio/BlackBox/v24.png",
+      "/public/images/portolio/BlackBox/v25.png",
+      "/public/images/portolio/BlackBox/v26.png",
+      "/public/images/portolio/BlackBox/v27.png",
     ],
     stack: ["Next.js", "Tailwindcss", "Payfast"],
     link: "https://blackbox-designs.vercel.app/",
