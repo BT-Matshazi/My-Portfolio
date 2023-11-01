@@ -1,24 +1,22 @@
-import React from 'react';
-import PortfolioModel from './PortfolioModel';
+import React from "react";
+import PortfolioModel from "./PortfolioModel";
 import { useState } from "react";
 
 function PortfolioItem({ title, imgUrl, stack, link, Description }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  console.log(imgUrl);
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? imgUrl.length - 1 : prevSlide - 1
+    );
+  };
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    const prevSlide = () => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === 0 ? imgUrl.length - 1 : prevSlide - 1
-      );
-    };
-
-    const nextSlide = () => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === imgUrl.length - 1 ? 0 : prevSlide + 1
-      );
-    };
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === imgUrl.length - 1 ? 0 : prevSlide + 1
+    );
+  };
+  
   return (
     <div className="border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
       <div className="relative mb-6">
@@ -27,11 +25,11 @@ function PortfolioItem({ title, imgUrl, stack, link, Description }) {
           className="relative w-full"
           data-carousel="static"
         >
-          <div className="relative h-56 overflow-hidden  md:h-72">
+          <div className="relative h-80 overflow-hidden  md:h-96">
             {imgUrl.map((image, index) => (
               <div
                 key={index}
-                className={`${
+                className={`h-full ${
                   index === currentSlide ? "block" : "hidden"
                 } duration-700 ease-in-out`}
                 data-carousel-item={index === currentSlide ? "active" : ""}
