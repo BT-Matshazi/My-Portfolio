@@ -1,34 +1,6 @@
 export default [
   {
-    title: "School Project Management System",
-    imgUrl: [
-      "/assets/Wil Management.png",
-      "/assets/wil2.png",
-      "/assets/wil1.png",
-      "/assets/wil3.png",
-    ],
-    stack: ["Next.js", "Tailwindcss", "NextAuth", "MongoDB", "AWS S3"],
-    link: "https://wil-management.vercel.app/student/dashboard",
-    description:
-      "The Work Integrated Learning management system (WIL)-ms is a comprehensive digital platform designed to streamline and enhance the management of the Work Integration Learning module (WIL) at IIE Varsity College. This innovative system aims to empower students as they embark on a 13-week journey to build web and mobile applications for non-governmental organizations (NGOs) in collaborative groups of six.",
-  },
-  {
-    title: "Personal Web Development Agency V1",
-    imgUrl: [
-      "/assets/Blackbox.jpg",
-      "/assets/v11.png",
-      "/assets/v12.png",
-      "/assets/v13.png",
-      "/assets/v14.png",
-      "/assets/v15.png",
-    ],
-    stack: ["HTML", "CSS", "JavaScript"],
-    link: "https://blackboxdesigns.co.za/",
-    description:
-      "BlackBox Designs is my personal web development agency that specializes in building websites for small businesses. I offer a wide range of services including web design, web development, and web hosting.",
-  },
-  {
-    title: "Personal Web Development Agency V2",
+    title: "Personal Web Development Agency",
     imgUrl: [
       "/assets/v21.png",
       "/assets/v22.png",
@@ -42,6 +14,19 @@ export default [
     link: "https://blackbox-designs.vercel.app/",
     description:
       "BlackBox Designs is my personal web development agency that specializes in building websites for small businesses. I offer a wide range of services including web design, web development, and web hosting.",
+  },
+  {
+    title: "School Project Management System",
+    imgUrl: [
+      "/assets/Wil Management.png",
+      "/assets/wil2.png",
+      "/assets/wil1.png",
+      "/assets/wil3.png",
+    ],
+    stack: ["Next.js", "Tailwindcss", "NextAuth", "MongoDB", "AWS S3"],
+    link: "https://wil-management.vercel.app/student/dashboard",
+    description:
+      "The Work Integrated Learning management system (WIL)-ms is a comprehensive digital platform designed to streamline and enhance the management of the Work Integration Learning module (WIL) at IIE Varsity College. This innovative system aims to empower students as they embark on a 13-week journey to build web and mobile applications for non-governmental organizations (NGOs) in collaborative groups of six.",
   },
   {
     title: "Property Listings",
