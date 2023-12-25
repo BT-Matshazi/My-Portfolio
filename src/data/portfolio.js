@@ -11,7 +11,7 @@ export default [
       "/assets/v27.png",
     ],
     stack: ["Next.js", "Tailwindcss", "Payfast"],
-    link: "https://blackbox-designs.vercel.app/",
+    link: "https://blackboxdesigns.co.za/",
     description:
       "BlackBox Designs is my personal web development agency that specializes in building websites for small businesses. I offer a wide range of services including web design, web development, and web hosting.",
   },
