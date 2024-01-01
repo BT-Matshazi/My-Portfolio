@@ -170,6 +170,12 @@ export default function PortfolioModel({ title, imgUrl, stack, link, Description
                 >
                   Visit
                 </a>
+                <button
+                  onClick={toggleModal}
+                  className="text-black bg-white border border-gray-500 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>
