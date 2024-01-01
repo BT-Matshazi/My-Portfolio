@@ -1,5 +1,19 @@
 export default [
   {
+    title: "Canvor",
+    imgUrl: [
+      "/assets/canvor/1.png",
+      "/assets/canvor/2.png",
+      "/assets/canvor/3.png",
+      "/assets/canvor/4.png",
+      "/assets/canvor/5.png",
+    ],
+    stack: ["Next.js", "Tailwindcss", "Shadcn-ui", "MySQL", "NextAuth"],
+    link: "https://canvor.vercel.app/",
+    description:
+      "Canvor is an online store dedicated to providing a curated collection of high-quality canvases that bring art and elegance to your surroundings. Whether you're decorating your home, office, or gifting a loved one, Canvor has the perfect piece to suit every taste and style.",
+  },
+  {
     title: "Personal Web Development Agency",
     imgUrl: [
       "/assets/v21.png",
