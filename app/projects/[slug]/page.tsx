@@ -1,43 +1,42 @@
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Github, Globe } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { SectionHeading } from "@/components/section-heading"
-import { projects } from "@/lib/data"
-import { ProjectCard } from "@/components/project-card"
-import ScrollAnimation from "@/components/scroll-animation"
-import { Separator } from "@/components/ui/separator"
-import { MarkdownToJSX } from "@/components/markdown-to-jsx"
-
-interface ProjectPageProps {
-  params: {
-    slug: string
-  }
-}
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, Github, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { SectionHeading } from "@/components/section-heading";
+import { projects } from "@/lib/data";
+import { ProjectCard } from "@/components/project-card";
+import ScrollAnimation from "@/components/scroll-animation";
+import { Separator } from "@/components/ui/separator";
+import { MarkdownToJSX } from "@/components/markdown-to-jsx";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
-  }))
+  }));
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug)
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
   // Find related projects (excluding the current one)
   const relatedProjects = projects
-    .filter((p) => 
-      p.id !== project.id && 
-      p.tags.some((tag) => project.tags.includes(tag))
+    .filter(
+      (p) =>
+        p.id !== project.id && p.tags.some((tag) => project.tags.includes(tag))
     )
-    .slice(0, 3)
-
+    .slice(0, 3);
 
   return (
     <div className="container mx-auto px-4  py-12">
