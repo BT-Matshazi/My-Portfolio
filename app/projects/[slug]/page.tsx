@@ -9,7 +9,8 @@ import { projects } from "@/lib/data";
 import { ProjectCard } from "@/components/project-card";
 import ScrollAnimation from "@/components/scroll-animation";
 import { Separator } from "@/components/ui/separator";
-import { MarkdownToJSX } from "@/components/markdown-to-jsx";
+import { MarkdownToJSX, extractTableOfContents } from "@/components/markdown-to-jsx";
+import { TableOfContents } from "@/components/table-of-contents";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -29,6 +30,9 @@ export default async function ProjectPage({
   if (!project) {
     notFound();
   }
+
+  // Extract table of contents from project content
+  const tableOfContents = extractTableOfContents(project.content);
 
   // Find related projects (excluding the current one)
   const relatedProjects = projects
@@ -104,9 +108,16 @@ export default async function ProjectPage({
       </ScrollAnimation>
 
       <ScrollAnimation direction="up" delay={0.2}>
-        <div className="prose dark:prose-invert max-w-none mb-16">
-          {/* @ts-ignore - using MDXRemote with raw string content */}
-          <MarkdownToJSX content={project.content} />
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-8 mb-16">
+          <div className="prose dark:prose-invert max-w-none">
+            {/* @ts-ignore - using MDXRemote with raw string content */}
+            <MarkdownToJSX content={project.content} />
+          </div>
+          {tableOfContents.length > 0 && (
+            <aside className="hidden lg:block">
+              <TableOfContents items={tableOfContents} />
+            </aside>
+          )}
         </div>
       </ScrollAnimation>
 
