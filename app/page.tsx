@@ -21,80 +21,106 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent z-0" />
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-10 dark:opacity-5" />
+      <section className="relative py-24 md:py-40 overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 z-0" />
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-[0.03] dark:opacity-[0.02]" />
+
+        {/* Gradient orbs for visual interest */}
+        <div className="absolute top-20 -left-20 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+        <div className="absolute top-40 -right-20 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-20 left-1/2 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <ScrollAnimation direction="up">
-              <Badge variant="outline" className="mb-4">
+              <Badge variant="outline" className="mb-6 text-sm py-1.5 px-4 backdrop-blur-sm bg-background/50">
                 Full-Stack Developer
               </Badge>
             </ScrollAnimation>
 
             <ScrollAnimation direction="up" delay={0.1}>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                 Hi, I'm Bekithemba Matshazi
               </h1>
             </ScrollAnimation>
 
             <ScrollAnimation direction="up" delay={0.2}>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-10 leading-relaxed">
                 I build exceptional and accessible digital experiences for the
                 web. Specializing in{" "}
-                <span className="text-foreground font-medium">TypeScript</span>,{" "}
-                <span className="text-foreground font-medium">React</span>,{" "}
-                <span className="text-foreground font-medium">Next.js</span>,{" "}
-                <span className="text-foreground font-medium">Go</span> and{" "}
-                <span className="text-foreground font-medium">Express.js</span>.
+                <span className="text-foreground font-semibold relative inline-block group">
+                  TypeScript
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </span>
+                ,{" "}
+                <span className="text-foreground font-semibold relative inline-block group">
+                  React
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </span>
+                ,{" "}
+                <span className="text-foreground font-semibold relative inline-block group">
+                  Next.js
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </span>
+                ,{" "}
+                <span className="text-foreground font-semibold relative inline-block group">
+                  Go
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </span>{" "}
+                and{" "}
+                <span className="text-foreground font-semibold relative inline-block group">
+                  Express.js
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </span>
+                .
               </p>
             </ScrollAnimation>
 
             <ScrollAnimation direction="up" delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Button asChild size="lg" className="text-base py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link href="/projects">
                     View My Work
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Link
-                  href="/cv/cv.pdf"
-                  className="h-10  px-6 has-[>svg]:px-4 border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive
-"
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Resume
-                </Link>
+                <Button asChild size="lg" variant="outline" className="text-base py-6 px-8 backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300">
+                  <Link href="/cv/cv.pdf">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Resume
+                  </Link>
+                </Button>
               </div>
             </ScrollAnimation>
 
             <ScrollAnimation direction="up" delay={0.4}>
-              <div className="flex gap-4 mt-8">
-                <Button variant="ghost" size="icon" asChild>
+              <div className="flex gap-3">
+                <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full hover:scale-110 transition-transform duration-300" asChild>
                   <Link
                     href="https://github.com/BT-Matshazi"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="GitHub Profile"
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="h-6 w-6" />
                     <span className="sr-only">GitHub</span>
                   </Link>
                 </Button>
-                <Button variant="ghost" size="icon" asChild>
+                <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full hover:scale-110 transition-transform duration-300" asChild>
                   <Link
                     href="https://www.linkedin.com/in/bekithemba-matshazi-419386153/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile"
                   >
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>
                 </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <Link href="mailto:bekithembamatshazi@gamil.com">
-                    <Mail className="h-5 w-5" />
+                <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full hover:scale-110 transition-transform duration-300" asChild>
+                  <Link href="mailto:bekithembamatshazi@gamil.com" aria-label="Email Contact">
+                    <Mail className="h-6 w-6" />
                     <span className="sr-only">Email</span>
                   </Link>
                 </Button>
@@ -105,12 +131,13 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 ">
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+        <div className="container mx-auto px-4 relative z-10">
           <SectionHeading
             title="Featured Projects"
             subtitle="Here are some of my recent projects. Each one was carefully crafted to solve specific problems."
-            className="mb-16"
+            className="mb-20"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -143,12 +170,13 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4 ">
+      <section className="py-24 md:py-32 relative overflow-hidden bg-muted/30">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+        <div className="container mx-auto px-4 relative z-10">
           <SectionHeading
             title="Experience"
             subtitle="I've had the opportunity to work on diverse projects across various domains."
-            className="mb-16"
+            className="mb-20"
           />
 
           <div className="max-w-3xl mx-auto">
