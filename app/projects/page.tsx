@@ -1,6 +1,29 @@
+import { Metadata } from "next";
 import { SectionHeading } from "@/components/section-heading"
 import { ProjectCard } from "@/components/project-card"
 import { projects } from "@/lib/data"
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore my portfolio of web development projects showcasing expertise in TypeScript, React, Next.js, Go, and modern web technologies. Each project represents unique challenges and innovative solutions.",
+  openGraph: {
+    title: "Projects | Bekithemba Matshazi",
+    description:
+      "Explore my portfolio of web development projects showcasing expertise in TypeScript, React, Next.js, Go, and modern web technologies.",
+    type: "website",
+    url: "https://bekithembamatshazi.com/projects",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Bekithemba Matshazi",
+    description:
+      "Explore my portfolio of web development projects showcasing expertise in TypeScript, React, Next.js, Go, and modern web technologies.",
+  },
+  alternates: {
+    canonical: "https://bekithembamatshazi.com/projects",
+  },
+};
 
 export default function ProjectsPage() {
   return (

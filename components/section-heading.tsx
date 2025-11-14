@@ -9,13 +9,17 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ title, subtitle, className }: SectionHeadingProps) {
   return (
-    <div className={cn("space-y-2 text-center", className)}>
+    <div className={cn("space-y-4 text-center", className)}>
       <ScrollAnimation direction="up">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          {title}
+        </h2>
       </ScrollAnimation>
       {subtitle && (
         <ScrollAnimation direction="up" delay={0.1}>
-          <p className="text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {subtitle}
+          </p>
         </ScrollAnimation>
       )}
     </div>
