@@ -1,7 +1,8 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Github, Globe } from "lucide-react";
+import { ArrowLeft, Github, Globe, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/section-heading";
@@ -9,13 +10,59 @@ import { projects } from "@/lib/data";
 import { ProjectCard } from "@/components/project-card";
 import ScrollAnimation from "@/components/scroll-animation";
 import { Separator } from "@/components/ui/separator";
-import { MarkdownToJSX, extractTableOfContents } from "@/components/markdown-to-jsx";
+import { MarkdownToJSX } from "@/components/markdown-to-jsx";
 import { TableOfContents } from "@/components/table-of-contents";
+import { ShareButtons } from "@/components/share-buttons";
+import { calculateReadingTime, extractTableOfContents } from "@/lib/utils";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    keywords: [...project.tags, "web development", "portfolio", "project"],
+    openGraph: {
+      title: `${project.title} | Bekithemba Matshazi`,
+      description: project.description,
+      type: "article",
+      url: `https://bekithembamatshazi.com/projects/${project.slug}`,
+      images: [
+        {
+          url: project.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Bekithemba Matshazi`,
+      description: project.description,
+      images: [project.imageUrl],
+    },
+    alternates: {
+      canonical: `https://bekithembamatshazi.com/projects/${project.slug}`,
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -31,7 +78,8 @@ export default async function ProjectPage({
     notFound();
   }
 
-  // Extract table of contents from project content
+  // Calculate reading time and extract TOC
+  const readingTime = calculateReadingTime(project.content);
   const tableOfContents = extractTableOfContents(project.content);
 
   // Find related projects (excluding the current one)
@@ -43,7 +91,7 @@ export default async function ProjectPage({
     .slice(0, 3);
 
   return (
-    <div className="container mx-auto px-4  py-12">
+    <div className="container mx-auto px-4 py-12">
       <Link
         href="/projects"
         className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8"
@@ -72,7 +120,18 @@ export default async function ProjectPage({
           ))}
         </div>
 
-        <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
+        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+
+        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+          <div className="flex items-center gap-1">
+            <Clock className="h-4 w-4" />
+            <span>{readingTime} min read</span>
+          </div>
+          <ShareButtons
+            title={project.title}
+            description={project.description}
+          />
+        </div>
 
         <p className="text-xl text-muted-foreground mb-8">
           {project.description}
@@ -107,19 +166,21 @@ export default async function ProjectPage({
         </div>
       </ScrollAnimation>
 
-      <ScrollAnimation direction="up" delay={0.2}>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-8 mb-16">
-          <div className="prose dark:prose-invert max-w-none">
-            {/* @ts-ignore - using MDXRemote with raw string content */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-8">
+        <ScrollAnimation direction="up" delay={0.2}>
+          <div className="prose dark:prose-invert max-w-none mb-16">
             <MarkdownToJSX content={project.content} />
           </div>
-          {tableOfContents.length > 0 && (
+        </ScrollAnimation>
+
+        {tableOfContents.length > 0 && (
+          <ScrollAnimation direction="up" delay={0.3}>
             <aside className="hidden lg:block">
               <TableOfContents items={tableOfContents} />
             </aside>
-          )}
-        </div>
-      </ScrollAnimation>
+          </ScrollAnimation>
+        )}
+      </div>
 
       {relatedProjects.length > 0 && (
         <>

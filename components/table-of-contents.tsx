@@ -1,16 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-
-interface TOCItem {
-  id: string;
-  text: string;
-  level: number;
-}
+import type { TocItem } from "@/lib/utils";
 
 interface TableOfContentsProps {
-  items: TOCItem[];
+  items: TocItem[];
 }
 
 export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
@@ -25,10 +20,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
           }
         });
       },
-      {
-        rootMargin: "-20% 0% -35% 0%",
-        threshold: 1,
-      }
+      { rootMargin: "-20% 0% -35% 0%" }
     );
 
     // Observe all headings
@@ -44,12 +36,17 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
     };
   }, [items]);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
+  const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const top = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: "smooth" });
+      const offset = 80; // Header height offset
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -58,30 +55,28 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
   }
 
   return (
-    <nav className="sticky top-20 h-fit max-h-[calc(100vh-6rem)] overflow-auto">
-      <div className="border-l-2 border-border pl-4">
-        <p className="text-sm font-semibold text-foreground mb-4">
-          Table of Contents
-        </p>
-        <ul className="space-y-2">
-          {items.map((item) => (
-            <li key={item.id} className={cn(item.level === 2 && "ml-4")}>
-              <a
-                href={`#${item.id}`}
-                onClick={(e) => handleClick(e, item.id)}
-                className={cn(
-                  "text-sm transition-colors hover:text-foreground block",
-                  activeId === item.id
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <nav className="sticky top-24">
+      <h3 className="text-sm font-semibold mb-4">Table of Contents</h3>
+      <ul className="space-y-2 text-sm">
+        {items.map((item) => (
+          <li
+            key={item.id}
+            style={{ paddingLeft: `${(item.level - 2) * 12}px` }}
+          >
+            <button
+              onClick={() => scrollToHeading(item.id)}
+              className={cn(
+                "text-left hover:text-foreground transition-colors w-full",
+                activeId === item.id
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground"
+              )}
+            >
+              {item.text}
+            </button>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

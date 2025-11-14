@@ -1,0 +1,16 @@
+# Robots.txt for Bekithemba Matshazi Portfolio
+# https://bekithembamatshazi.com
+
+User-agent: *
+Allow: /
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas if any
+Disallow: /api/
+Disallow: /_next/
+Disallow: /cv/
+
+# Sitemap location
+Sitemap: https://bekithembamatshazi.com/sitemap.xml
