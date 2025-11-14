@@ -10,6 +10,40 @@ interface MarkdownToJSXProps {
   content: string;
 }
 
+// Helper function to generate ID from heading text
+const generateId = (text: string): string => {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+};
+
+// Extract table of contents from markdown content
+export const extractTableOfContents = (content: string) => {
+  const lines = content.trim().split("\n");
+  const toc: Array<{ id: string; text: string; level: number }> = [];
+
+  lines.forEach((line) => {
+    if (line.startsWith("## ")) {
+      const text = line.substring(3);
+      toc.push({
+        id: generateId(text),
+        text,
+        level: 2,
+      });
+    } else if (line.startsWith("# ")) {
+      const text = line.substring(2);
+      toc.push({
+        id: generateId(text),
+        text,
+        level: 1,
+      });
+    }
+  });
+
+  return toc;
+};
+
 export const MarkdownToJSX: React.FC<MarkdownToJSXProps> = ({ content }) => {
   const lines = content.trim().split("\n");
   const elements: JSX.Element[] = [];
