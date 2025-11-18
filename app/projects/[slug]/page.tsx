@@ -11,6 +11,10 @@ import ScrollAnimation from "@/components/scroll-animation";
 import { Separator } from "@/components/ui/separator";
 import { MarkdownToJSX, extractTableOfContents } from "@/components/markdown-to-jsx";
 import { TableOfContents } from "@/components/table-of-contents";
+import { CaseStudySection } from "@/components/case-study-section";
+import { ProjectMetrics } from "@/components/project-metrics";
+import { CodeSnippet } from "@/components/code-snippet";
+import { TechStackDisplay } from "@/components/tech-stack-display";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -107,7 +111,83 @@ export default async function ProjectPage({
         </div>
       </ScrollAnimation>
 
-      <ScrollAnimation direction="up" delay={0.2}>
+      {/* Case Study Sections */}
+      {(project.problem || project.solution || project.results) && (
+        <ScrollAnimation direction="up" delay={0.2}>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-8">Case Study</h2>
+            {project.problem && (
+              <CaseStudySection type="problem" content={project.problem} />
+            )}
+            {project.solution && (
+              <CaseStudySection type="solution" content={project.solution} />
+            )}
+            {project.results && (
+              <CaseStudySection type="results" content={project.results} />
+            )}
+          </div>
+        </ScrollAnimation>
+      )}
+
+      {/* Project Metrics */}
+      {project.metrics && project.metrics.length > 0 && (
+        <ScrollAnimation direction="up" delay={0.3}>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Key Metrics</h2>
+            <ProjectMetrics metrics={project.metrics} />
+          </div>
+        </ScrollAnimation>
+      )}
+
+      {/* Tech Stack */}
+      {project.techStack && (
+        <ScrollAnimation direction="up" delay={0.4}>
+          <TechStackDisplay techStack={project.techStack} />
+        </ScrollAnimation>
+      )}
+
+      {/* Code Snippets */}
+      {project.codeSnippets && project.codeSnippets.length > 0 && (
+        <ScrollAnimation direction="up" delay={0.5}>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Code Highlights</h2>
+            {project.codeSnippets.map((snippet, index) => (
+              <CodeSnippet
+                key={index}
+                code={snippet.code}
+                language={snippet.language}
+                title={snippet.title}
+                description={snippet.description}
+              />
+            ))}
+          </div>
+        </ScrollAnimation>
+      )}
+
+      {/* StackBlitz Embed */}
+      {project.stackBlitzUrl && (
+        <ScrollAnimation direction="up" delay={0.6}>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Live Code Playground</h2>
+            <div className="border rounded-lg overflow-hidden" style={{ height: "500px" }}>
+              <iframe
+                src={project.stackBlitzUrl}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                  overflow: "hidden",
+                }}
+                title="Live Code Editor"
+                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+              ></iframe>
+            </div>
+          </div>
+        </ScrollAnimation>
+      )}
+
+      <ScrollAnimation direction="up" delay={0.7}>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-8 mb-16">
           <div className="prose dark:prose-invert max-w-none">
             {/* @ts-ignore - using MDXRemote with raw string content */}
