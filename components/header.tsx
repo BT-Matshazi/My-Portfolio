@@ -4,13 +4,16 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
-import { Menu, X, Code } from "lucide-react";
+import { Menu, X, Code, Command } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+  { href: "/now", label: "Now" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -43,7 +46,7 @@ export default function Header() {
           <span>Bekithemba Matshazi</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -53,6 +56,24 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-2 hidden lg:flex text-muted-foreground"
+            onClick={() => {
+              const event = new KeyboardEvent('keydown', {
+                key: 'k',
+                metaKey: true,
+                bubbles: true
+              });
+              document.dispatchEvent(event);
+            }}
+          >
+            <Command className="h-4 w-4" />
+            <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+              <span className="text-xs">⌘</span>K
+            </kbd>
+          </Button>
           <ThemeToggle />
         </nav>
 

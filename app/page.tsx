@@ -5,6 +5,7 @@ import { Timeline } from "@/components/timeline";
 import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import ScrollAnimation from "@/components/scroll-animation";
+import { BentoGrid } from "@/components/bento-grid";
 import {
   ArrowRight,
   Download,
@@ -101,6 +102,18 @@ export default function Home() {
               </div>
             </ScrollAnimation>
           </div>
+        </div>
+      </section>
+
+      {/* Bento Grid Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="At a Glance"
+            subtitle="Quick insights about my work, skills, and what I'm currently focused on"
+            className="mb-12"
+          />
+          <BentoGrid />
         </div>
       </section>
 
